@@ -1,0 +1,23 @@
+PRAKTIKUM :
+CREATE DATABASE akademik;
+use akademik;
+CREATE TABLE mahasiswa (nim varchar(5) PRIMARY KEY, nama varchar(50), jkel varchar(1), alamat text, tgllhr date);
+INSERT INTO mahasiswa VALUES ('MHS01','Siti Aminah','P','SOLO,'1995-10-01');
+INSERT INTO mahasiswa VALUES ('MHS02','Rita','P','SOLO,'1999-01-01');
+INSERT INTO mahasiswa VALUES ('MHS03','Amirudin','L','SEMARANG,'1998-08-11');
+INSERT INTO mahasiswa VALUES ('MHS04','Siti Maryam','P','JAKARTA,'1995-04-15');
+SELECT * FROM mahasiswa;
+SELECT * FROM mahasiswa WHERE alamat='SOLO';
+
+POSTEST :
+use akademik;
+ALTER TABLE mahasiswa ADD prodi varchar(50);
+UPDATE mahasiswa SET prodi='Teknik Industri' WHERE nim='MHS01';
+UPDATE mahasiswa SET prodi='Teknik Industri' WHERE nim='MHS02';
+UPDATE mahasiswa SET prodi='Teknik Informatika' WHERE nim='MHS03';
+UPDATE mahasiswa SET prodi='Teknologi Pangan' WHERE nim='MHS04';
+SELECT * FROM mahasiswa;
+SELECT * FROM mahasiswa WHERE prodi='Teknik Industri';
+SELECT nim,nama,prodi FROM mahasiswa WHERE alamat='SOLO';
+SELECT * FROM mahasiswa WHERE jkel='P' AND prodi='Teknologi Pangan';
+SELECT nim,nama,jkel,alamat FROM mahasiswa WHERE jkel='L' AND alamat='SEMARANG';
